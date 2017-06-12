@@ -30,7 +30,7 @@
 
             <input id="titre" name="titre" placeholder="Titre" value=""><br>
             <label>Votre image à upload</label>
-            <input type="file" id="image" name="upload" placeholder="Images à Upload" value=""><br>
+            <input type="file" id="image" name="image" placeholder="Images à Upload" value=""><br>
             <textarea id="article" name="article" placeholder="Votre article" row="40" value=""></textarea>
             <br></br>
 
@@ -39,6 +39,7 @@
         </div>
       </div>
     </section>
+  </form>
   </div>
     </body>
 </html>

@@ -24,16 +24,14 @@
     </ul>
   </header>
 
-  <div class="ensemble">
-    <section class="top">
-      <div class="row">
+
             </div>
             <form method="post" action="retour.php">
               <input ID="btn" type="submit" value="Voir votre article"></input>
             </form>
 
           </div>
-        </div>
+
 
 
         </div>
@@ -49,10 +47,10 @@
       $reponse1 = $reponse->fetchAll();
       // var_dump($reponse1);
       foreach ($reponse1 as $value) {
-          echo '<p>Article écrit le : '.$value->Date.'</p><p>Titre : '.$value->titre.'</p><p> Images : '.$value->image.'</p><p>Article : '.$value->article.'</p><hr>';
+          echo '<p>Article écrit le : '.$value->date.'</p><p>Titre : '.$value->titre.'</p><img src="./img/' . $value->image .'/> <p> Article : ' . $value->article . '</p><hr>';
       }
       ?>
-
+'<img src="images/produits/' . $reponse['photo'] . '" alt="'
     </div>
     </div>
 
