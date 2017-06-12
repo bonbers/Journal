@@ -25,7 +25,7 @@
 
             </div>
             <form method="post" action="retour.php">
-              <input ID="btn" type="submit" value="Voir votre article"></input>
+              <input ID="btn" type="submit" name="Submit" value="Voir votre article"></input>
             </form>
             </div>
 <?php
@@ -33,44 +33,22 @@
 include("connect.php");
 /////////////////////////////////////////////////////////////////////////
 
-if(isset($_FILES['image'])){
-
-  $dest_dossier = './Journal/img/';
-// il est copié du temporaire vers mon répertoire//
- $dest_fichier = basename($_FILES['image']);
-
-  move_uploaded_file($_FILES['image']['tmp_name'], $dest_dossier . $dest_fichier);
-  }
 
 ///////////////////////////////////////////////////////////////////////////
 
 $titre = $_POST['titre'];
-// $image = $_POST['image'];
+$image = $_POST['image'];
 $article = $_POST['article'];
-$FILES= $_POST['image'];
-$dest_dossier = './Journal/img/';
-// il est copié du temporaire vers mon répertoire//
-$dest_fichier = basename($_FILES['image']);
 
 /////////////////////////////////////////////////////////////////////////
 
-if(isset($_FILES['image']))
-{
-    $FILES = $_POST['image'];
-}
-else
-{
-    $_FILES="";
-}
 
-    // je l'écris dans le champ url//
-
-    $sql = "INSERT INTO bbc(./Journal/img) VALUES('". $FILES ."', '". $dest_dossier . $dest_fichier ."')";
-$req = $pdo->prepare("INSERT INTO bbc (titre, article)
-VALUES (:titre, :article)");
+$req = $pdo->prepare("INSERT INTO bbc (titre, image, article)
+VALUES (:titre, :image, :article)");
 
 $req->execute(array(
     'titre' => $titre,
+    'image' => $image,
     'article' => $article
 ));
 
