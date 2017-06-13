@@ -26,7 +26,7 @@
 
 
             </div>
-            <form method="post" action="retour.php">
+            <form method="post" action="retour.php" enctype="multipart/form-data">
               <input ID="btn" type="submit" value="Voir votre article"></input>
             </form>
 
@@ -47,7 +47,7 @@
       $reponse1 = $reponse->fetchAll();
       // var_dump($reponse1);
       foreach ($reponse1 as $value) {
-          echo '<p>Article écrit le : '.$value->date.'</p><p>Titre : '.$value->titre.'</p><img src="./img/' . $value->image .'"> <p> Article : ' . $value->article . '</p><hr>';
+          echo '<p>Article écrit le : '.$value->date.'</p><p>Titre : '.$value->titre.'</p><img src="./upload/' . $value->image .'"> <p> Article : ' . $value->article . '</p><hr>';
       }
       ?>
 

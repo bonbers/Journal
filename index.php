@@ -19,7 +19,7 @@
     </header>
 
     <div class="ensemble">
-    <form method="post" action="list.php">
+    <form method="post" action="list.php" enctype="multipart/form-data">
     <section class="top">
       <div class="row">
 
